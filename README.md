@@ -1,6 +1,7 @@
-# ES6 App Template
+# ericlifka.com
 
-Drop in template for ES6 projects with babel and less compilation
+Uses [ES6 Template](https://github.com/ericlifka/es6-template)
+Supplies builds for [ericlifka.github.io](https://github.com/ericlifka/ericlifka.github.io)
 
 ## Dependencies
 
