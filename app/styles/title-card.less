@@ -1,0 +1,52 @@
+.title-card {
+    padding: 35px 45px;
+
+    background-color: @primary-dark;
+    color: @primary-light;
+
+    font-size: 18px;
+    font-family: @fixed-width-font;
+
+    .line {
+        .select-rule(none);
+        line-height: 30px;
+
+        &.indent {
+            margin-left: 30px;
+        }
+
+        &.strong {
+            vertical-align: middle;
+
+            .string {
+                font-size: 30px;
+                color: @alternate-light;
+            }
+        }
+
+        .identifier {
+            color: @primary-med;
+        }
+
+        .string {
+            .select-rule(text);
+            color: @alternate-dark;
+            font-size: 20px;
+            font-family: @standard-font;
+
+            & a {
+                color: inherit;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .label {
+            display: inline-block;
+            min-width: 105px;
+            color: #E0F7FA;
+        }
+    }
+}
