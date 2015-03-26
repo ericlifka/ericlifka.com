@@ -1,1 +1,3 @@
-console.log('test');
+import dynamicHeader from './dynamic-header';
+
+dynamicHeader();
