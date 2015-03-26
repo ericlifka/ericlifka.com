@@ -7,6 +7,18 @@
     font-size: 18px;
     font-family: @fixed-width-font;
 
+    .full-card {
+        .label {
+            min-width: 105px;
+        }
+    }
+
+    .collapsed-card {
+        .collapse-identifier {
+            background-color: #0F5184;
+        }
+    }
+
     .line {
         .select-rule(none);
         line-height: 30px;
@@ -45,18 +57,6 @@
 
         .label {
             display: inline-block;
-        }
-    }
-
-    .full-card {
-        .label {
-            min-width: 105px;
-        }
-    }
-
-    .collapsed-card {
-        .collapse-identifier {
-            background-color: #0F5184;
         }
     }
 }

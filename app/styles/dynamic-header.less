@@ -1,11 +1,28 @@
 .dynamic-header {
     &.full {
-
+        .full-card {
+            display: block;
+        }
+        .collapsed-card {
+            display: none;
+        }
     }
+
     &.collapsing {
-
+        .full-card {
+            display: none;
+        }
+        .collapsed-card {
+            display: block;
+        }
     }
-    &.collapsed {
 
+    &.collapsed {
+        .full-card {
+            display: none;
+        }
+        .collapsed-card {
+            display: block;
+        }
     }
 }
