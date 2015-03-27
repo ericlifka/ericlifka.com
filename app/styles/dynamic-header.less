@@ -1,7 +1,7 @@
 .dynamic-header {
     &.full {
         .full-card {
-            display: block;
+            visibility: visible;
         }
         .collapsed-card {
             display: none;
@@ -10,7 +10,7 @@
 
     &.collapsing {
         .full-card {
-            display: none;
+            visibility: hidden;
         }
         .collapsed-card {
             display: block;
@@ -19,7 +19,7 @@
 
     &.collapsed {
         .full-card {
-            display: none;
+            visibility: hidden;
         }
         .collapsed-card {
             display: block;
