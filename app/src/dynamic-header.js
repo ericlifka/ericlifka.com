@@ -1,5 +1,5 @@
 export default function () {
-    const FULL_THRESHOLD = 5;
+    const FULL_THRESHOLD = 85;
     const COLLAPSING_THRESHOLD = 230;
 
     const titleBar = document.querySelector('.title-card');
