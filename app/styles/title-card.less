@@ -1,6 +1,5 @@
 .title-card {
     position: relative;
-    padding: 35px 45px;
 
     background-color: @primary-dark;
     color: @primary-light;
@@ -9,18 +8,19 @@
     font-family: @fixed-width-font;
 
     .full-card {
+        padding: 25px 45px;
+
         .label {
             min-width: 105px;
         }
     }
 
     .collapsed-card {
+        padding: 21px 45px;
+        width: 100%;
+
         position: fixed;
         top: 0;
-
-        .collapse-identifier {
-            background-color: #0F5184;
-        }
     }
 
     .line {
@@ -42,6 +42,10 @@
 
         .identifier {
             color: @primary-med;
+        }
+
+        .collapse-identifier {
+            background-color: #0F5184;
         }
 
         .string {

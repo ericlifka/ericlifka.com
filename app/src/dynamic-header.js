@@ -1,4 +1,7 @@
 export default function () {
+    const FULL_THRESHOLD = 5;
+    const COLLAPSING_THRESHOLD = 230;
+
     const titleBar = document.querySelector('.title-card');
     let titleBarState = 'full';
 
@@ -6,7 +9,7 @@ export default function () {
         const scrollOffset = window.scrollY;
 
         if (titleBarState === 'full') {
-            if (scrollOffset > 40) {
+            if (scrollOffset > FULL_THRESHOLD) {
                 titleBarState = 'collapsing';
                 titleBar.classList.remove('full');
                 titleBar.classList.add('collapsing');
@@ -14,13 +17,13 @@ export default function () {
         }
 
         else if (titleBarState === 'collapsing') {
-            if (scrollOffset <= 40) {
+            if (scrollOffset <= FULL_THRESHOLD) {
                 titleBarState = 'full';
                 titleBar.classList.remove('collapsing');
                 titleBar.classList.add('full');
             }
 
-            if (scrollOffset > 230) {
+            if (scrollOffset > COLLAPSING_THRESHOLD) {
                 titleBarState = 'collapsed';
                 titleBar.classList.remove('collapsing');
                 titleBar.classList.add('collapsed');
