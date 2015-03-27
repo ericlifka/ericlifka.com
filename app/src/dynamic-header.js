@@ -1,6 +1,6 @@
 export default function () {
     const FULL_THRESHOLD = 85;
-    const COLLAPSING_THRESHOLD = 230;
+    const COLLAPSING_THRESHOLD = 291;
 
     const titleBar = document.querySelector('.title-card');
     let titleBarState = 'full';
@@ -31,7 +31,7 @@ export default function () {
         }
 
         else if (titleBarState === 'collapsed') {
-            if (scrollOffset <= 230) {
+            if (scrollOffset <= COLLAPSING_THRESHOLD) {
                 titleBarState = 'collapsing';
                 titleBar.classList.remove('collapsed');
                 titleBar.classList.add('collapsing');
