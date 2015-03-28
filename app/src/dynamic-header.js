@@ -1,9 +1,9 @@
-export default function () {
-    const FULL_THRESHOLD = 85;
-    const COLLAPSING_THRESHOLD = 291;
+const FULL_THRESHOLD = 85;
+const COLLAPSING_THRESHOLD = 291;
+let titleBarState = 'full';
 
+export default function () {
     const titleBar = document.querySelector('.title-card');
-    let titleBarState = 'full';
 
     window.addEventListener('scroll', function () {
         const scrollOffset = window.scrollY;
