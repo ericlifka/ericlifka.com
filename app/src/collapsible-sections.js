@@ -6,6 +6,9 @@ export default function () {
     );
 
     sections.forEach(section => {
-        console.log(section);
-    })
+        const label = section.querySelector('label');
+        const content = section.querySelector('.content');
+
+        label.addEventListener('click', event => {});
+    });
 };
