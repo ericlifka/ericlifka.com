@@ -12,15 +12,21 @@
         }
 
         .content {
-
+            display: block;
         }
 
         .content-collapsed {
-
+            display: none;
         }
 
-        .hidden {
-            display: none;
+        &.collapsed {
+            .content {
+                display: none;
+            }
+
+            .content-collapsed {
+                display: block;
+            }
         }
     }
 }

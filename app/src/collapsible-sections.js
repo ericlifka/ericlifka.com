@@ -1,14 +1,14 @@
 const convertToArray = elemList => Array.prototype.slice.apply(elemList);
 
 class ContentComponent {
-    constructor(label, contentMain, contentCollapsed) {
-        this.label = label;
-        this.contentMain = contentMain;
-        this.contentCollapsed = contentCollapsed;
+    constructor(section) {
+        this.section = section;
+        this.label = section.querySelector('label');
+        this.contentMain = section.querySelector('.content');
+        this.contentCollapsed = section.querySelector('.content-collapsed');
         this.collapsed = false;
 
         this.addListeners();
-        this.setInitialState();
     }
 
     addListeners() {
@@ -18,19 +18,13 @@ class ContentComponent {
 
     toggleState() {
         if (this.collapsed) {
-            this.contentMain.classList.add('hidden');
-            this.contentCollapsed.classList.remove('hidden');
+            this.section.classList.add('collapsed');
         }
         else {
-            this.contentMain.classList.remove('hidden');
-            this.contentCollapsed.classList.add('hidden');
+            this.section.classList.remove('collapsed');
         }
 
         this.collapsed = !this.collapsed;
-    }
-
-    setInitialState() {
-        this.contentCollapsed.classList.add('hidden');
     }
 }
 
@@ -39,11 +33,5 @@ export default function () {
         document.querySelectorAll('.center-stage .section')
     );
 
-    sections.forEach(section => {
-        const label = section.querySelector('label');
-        const contentMain = section.querySelector('.content');
-        const contentCollapsed = section.querySelector('.content-collapsed');
-
-        section.component = new ContentComponent(label, contentMain, contentCollapsed);
-    });
+    sections.forEach(section => section.component = new ContentComponent(section));
 };
