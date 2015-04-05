@@ -18,10 +18,10 @@ class ContentComponent {
 
     toggleState() {
         if (this.collapsed) {
-            this.section.classList.add('collapsed');
+            this.section.classList.remove('collapsed');
         }
         else {
-            this.section.classList.remove('collapsed');
+            this.section.classList.add('collapsed');
         }
 
         this.collapsed = !this.collapsed;
