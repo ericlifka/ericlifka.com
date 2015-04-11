@@ -26,20 +26,35 @@ var browserifyTree = fastBrowserify(babelTree, {
     }
 });
 
-var vendorTree = pickFiles('bower_components', {
+var orderedVendorFiles = [
+    'lodash/lodash.js',
+    'jquery/dist/jquery.js',
+    'bootstrap/dist/js/bootstrap.js'
+];
+var vendorTreeJS = pickFiles('bower_components', {
+    srcDir: '.',
+    destDir: '.',
+    files: orderedVendorFiles
+});
+var concatenatedVendorJS = concat(vendorTreeJS, {
+    inputFiles: orderedVendorFiles,
+    outputFile: '/vendor.js',
+    separator: '\n;\n',
+    wrapInEval: false,
+    wrapInFunction: false
+});
+
+var vendorTreeCSS = pickFiles('bower_components', {
     srcDir: '.',
     destDir: '.',
     files: [
-        'lodash/lodash.js'
+        'bootstrap/dist/css/bootstrap.css'
     ]
 });
-
-var concatenatedVendor = concat(vendorTree, {
-    inputFiles: [
-        '**/*.js'
-    ],
-    outputFile: '/vendor.js',
-    separator: '\n;\n',
+var concatenatedVendorCSS = concat(vendorTreeCSS, {
+    inputFiles: ['**/*.css'],
+    outputFile: '/vendor.css',
+    separator: '\n\n',
     wrapInEval: false,
     wrapInFunction: false
 });
@@ -52,4 +67,4 @@ var html = pickFiles('app', {
 
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
-module.exports = mergeTrees([html, styles, browserifyTree, concatenatedVendor]);
+module.exports = mergeTrees([html, styles, browserifyTree, concatenatedVendorJS, concatenatedVendorCSS]);
