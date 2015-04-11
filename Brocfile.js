@@ -67,4 +67,10 @@ var html = pickFiles('app', {
 
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
-module.exports = mergeTrees([html, styles, browserifyTree, concatenatedVendorJS, concatenatedVendorCSS]);
+module.exports = mergeTrees([
+    html,
+    styles,
+    browserifyTree,
+    concatenatedVendorJS,
+    concatenatedVendorCSS
+]);
