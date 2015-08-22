@@ -1,7 +1,5 @@
 {
-  "name": "es6-template",
+  "name": "ericlifka.com",
   "dependencies": {
-    "lodash": "~3.4.0",
-    "bootstrap": "~3.3.4"
   }
 }

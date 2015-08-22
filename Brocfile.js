@@ -26,38 +26,38 @@ var browserifyTree = fastBrowserify(babelTree, {
     }
 });
 
-var orderedVendorFiles = [
-    'lodash/lodash.js',
-    'jquery/dist/jquery.js',
-    'bootstrap/dist/js/bootstrap.js'
-];
-var vendorTreeJS = pickFiles('bower_components', {
-    srcDir: '.',
-    destDir: '.',
-    files: orderedVendorFiles
-});
-var concatenatedVendorJS = concat(vendorTreeJS, {
-    inputFiles: orderedVendorFiles,
-    outputFile: '/vendor.js',
-    separator: '\n;\n',
-    wrapInEval: false,
-    wrapInFunction: false
-});
-
-var vendorTreeCSS = pickFiles('bower_components', {
-    srcDir: '.',
-    destDir: '.',
-    files: [
-        'bootstrap/dist/css/bootstrap.css'
-    ]
-});
-var concatenatedVendorCSS = concat(vendorTreeCSS, {
-    inputFiles: ['**/*.css'],
-    outputFile: '/vendor.css',
-    separator: '\n\n',
-    wrapInEval: false,
-    wrapInFunction: false
-});
+//var orderedVendorFiles = [
+//    'lodash/lodash.js',
+//    'jquery/dist/jquery.js',
+//    'bootstrap/dist/js/bootstrap.js'
+//];
+//var vendorTreeJS = pickFiles('bower_components', {
+//    srcDir: '.',
+//    destDir: '.',
+//    files: orderedVendorFiles
+//});
+//var concatenatedVendorJS = concat(vendorTreeJS, {
+//    inputFiles: orderedVendorFiles,
+//    outputFile: '/vendor.js',
+//    separator: '\n;\n',
+//    wrapInEval: false,
+//    wrapInFunction: false
+//});
+//
+//var vendorTreeCSS = pickFiles('bower_components', {
+//    srcDir: '.',
+//    destDir: '.',
+//    files: [
+//        'bootstrap/dist/css/bootstrap.css'
+//    ]
+//});
+//var concatenatedVendorCSS = concat(vendorTreeCSS, {
+//    inputFiles: ['**/*.css'],
+//    outputFile: '/vendor.css',
+//    separator: '\n\n',
+//    wrapInEval: false,
+//    wrapInFunction: false
+//});
 
 var html = pickFiles('app', {
     srcDir: '/',
@@ -70,7 +70,7 @@ var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 module.exports = mergeTrees([
     html,
     styles,
-    browserifyTree,
-    concatenatedVendorJS,
-    concatenatedVendorCSS
+    browserifyTree
+    //concatenatedVendorJS,
+    //concatenatedVendorCSS
 ]);
