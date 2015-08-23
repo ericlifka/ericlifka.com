@@ -59,10 +59,13 @@ var concatenatedVendorCSS = concat(vendorTreeCSS, {
     wrapInFunction: false
 });
 
-var html = pickFiles('app', {
+var static = pickFiles('app', {
     srcDir: '/',
     destDir: '/',
-    files: ['index.html']
+    files: [
+        'index.html',
+        'CNAME'
+    ]
 });
 
 var fonts = pickFiles('bower_components', {
@@ -79,7 +82,7 @@ var fonts = pickFiles('bower_components', {
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
 module.exports = mergeTrees([
-    html,
+    static,
     styles,
     browserifyTree,
     //concatenatedVendorJS,
