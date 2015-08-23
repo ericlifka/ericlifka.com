@@ -32,6 +32,7 @@
   margin-top: @hex-vertical-offset;
   margin-left: @hex-horizontal-offset;
   background-color: transparent;
+  color: @background-color;
 
   &:before {
     position: absolute;
@@ -64,6 +65,6 @@
   }
 
   &.invert-hover {
-    .tile-hover(@background-color);
+    .tile-hover(@background-color, @hex-secondary-color);
   }
 }

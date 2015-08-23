@@ -18,15 +18,16 @@
     border-top-color: @color;
   }
 }
-.tile-hover(@color) {
+.tile-hover(@background-color, @color) {
   &:hover, &.active:hover, &.secondary:hover {
-    background-color: @color;
+    background-color: @background-color;
+    color: @color !important;
   }
   &:hover:before, &.active:hover:before, &.secondary:hover:before {
-    border-bottom-color: @color;
+    border-bottom-color: @background-color;
   }
   &:hover:after, &.active:hover:after, &.secondary:hover:after {
-    border-top-color: @color;
+    border-top-color: @background-color;
   }
 }
 .tile-active(@color) {
