@@ -1,4 +1,4 @@
-.tile-type(@normal, @hover, @active, @secondary) {
+.tile-type(@normal, @hover, @active) {
   /* normal */
   & {
     background-color: @normal;
@@ -31,17 +31,6 @@
   }
   &.active:after {
     border-top-color: @active;
-  }
-
-  /* secondary selection */
-  &.secondary {
-    background-color: @secondary;
-  }
-  &.secondary:before {
-    border-bottom-color: @secondary;
-  }
-  &.secondary:after {
-    border-top-color: @secondary;
   }
 }
 
@@ -84,7 +73,7 @@
     }
 
     & {
-      .tile-type(green, green, green, green);
+      .tile-type(green, green, green);
     }
   }
 }
