@@ -9,10 +9,12 @@
 .hex {
   position: relative;
   display: inline-block;
-  margin-top: 33px;
-  min-width: 104px;
-  margin-left: 3px;
-  height: 60px;
+  min-height: @hex-height;
+  max-height: @hex-height;
+  min-width: @hex-width;
+  max-width: @hex-width;
+  margin-top: @hex-vertical-offset;
+  margin-left: @hex-horizontal-offset;
   background-color: transparent;
 
   &:before {
@@ -20,10 +22,10 @@
     content: " ";
     width: 0;
     height: 0;
-    top: -30px;
-    border-bottom: 30px solid transparent;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    top: -@hex-triangle-height;
+    border-bottom: @hex-triangle-height solid transparent;
+    border-left: @hex-triangle-width solid transparent;
+    border-right: @hex-triangle-width solid transparent;
   }
 
   &:after {
@@ -31,10 +33,10 @@
     content: " ";
     width: 0;
     height: 0;
-    bottom: -30px;
-    border-top: 30px solid transparent;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    bottom: -@hex-triangle-height;
+    border-top: @hex-triangle-height solid transparent;
+    border-left: @hex-triangle-width solid transparent;
+    border-right: @hex-triangle-width solid transparent;
   }
 
   & {
