@@ -7,11 +7,11 @@
   user-select: @select;
 }
 
-.tile-type(@normal, @hover, @active) {
+.tile-type(@normal, @hover, @active, @cursor) {
   /* normal */
   & {
     background-color: @normal;
-    cursor: pointer;
+    cursor: @cursor;
   }
   &:before {
     border-bottom-color: @normal;
