@@ -55,10 +55,15 @@
     border-right: @hex-triangle-width solid transparent;
   }
 
-  .tile-type(@hex-secondary-color, @hex-secondary-color, @hex-secondary-color);
+  .tile(@hex-secondary-color);
+
   &.primary {
-    .tile-type(@hex-primary-color, @hex-primary-color, @hex-primary-color);
+    .tile(@hex-primary-color);
     .select-rule(none);
     cursor: default;
+  }
+
+  &.invert-hover {
+    .tile-hover(@background-color);
   }
 }

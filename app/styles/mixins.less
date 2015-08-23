@@ -7,37 +7,36 @@
   user-select: @select;
 }
 
-.tile-type(@normal, @hover, @active) {
-  /* normal */
+.tile(@color) {
   & {
-    background-color: @normal;
+    background-color: @color;
   }
   &:before {
-    border-bottom-color: @normal;
+    border-bottom-color: @color;
   }
   &:after {
-    border-top-color: @normal;
+    border-top-color: @color;
   }
-
-  /* hover */
+}
+.tile-hover(@color) {
   &:hover, &.active:hover, &.secondary:hover {
-    background-color: @hover;
+    background-color: @color;
   }
   &:hover:before, &.active:hover:before, &.secondary:hover:before {
-    border-bottom-color: @hover;
+    border-bottom-color: @color;
   }
   &:hover:after, &.active:hover:after, &.secondary:hover:after {
-    border-top-color: @hover;
+    border-top-color: @color;
   }
-
-  /* selected */
+}
+.tile-active(@color) {
   &.active {
-    background-color: @active;
+    background-color: @color;
   }
   &.active:before {
-    border-bottom-color: @active;
+    border-bottom-color: @color;
   }
   &.active:after {
-    border-top-color: @active;
+    border-top-color: @color;
   }
 }
