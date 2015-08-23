@@ -51,7 +51,8 @@
     border-right: @hex-triangle-width solid transparent;
   }
 
-  & {
-    .tile-type(green, green, green);
+  .tile-type(@hex-secondary-color, @hex-secondary-color, @hex-secondary-color);
+  &.primary {
+    .tile-type(@hex-primary-color, @hex-primary-color, @hex-primary-color);
   }
 }
