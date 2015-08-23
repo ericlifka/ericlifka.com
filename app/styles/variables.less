@@ -2,9 +2,10 @@
 @fixed-width-font: "Andale Mono";
 @standard-font: "Gill Sans";
 
-@hex-width: 104px;
-@hex-height: 60px;
-@hex-horizontal-offset: 6px;
+@hex-gap: 6px;
+@hex-height: 120px;
+@hex-width: round(@hex-height * sqrt(3));
+@hex-horizontal-offset: @hex-gap;
 @hex-vertical-offset: @hex-height / 2 + @hex-horizontal-offset;
 @hex-triangle-width: @hex-width / 2;
 @hex-triangle-height: @hex-height / 2;
