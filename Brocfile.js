@@ -44,20 +44,20 @@ var browserifyTree = fastBrowserify(babelTree, {
 //    wrapInFunction: false
 //});
 //
-//var vendorTreeCSS = pickFiles('bower_components', {
-//    srcDir: '.',
-//    destDir: '.',
-//    files: [
-//        'bootstrap/dist/css/bootstrap.css'
-//    ]
-//});
-//var concatenatedVendorCSS = concat(vendorTreeCSS, {
-//    inputFiles: ['**/*.css'],
-//    outputFile: '/vendor.css',
-//    separator: '\n\n',
-//    wrapInEval: false,
-//    wrapInFunction: false
-//});
+var vendorTreeCSS = pickFiles('bower_components', {
+    srcDir: '.',
+    destDir: '.',
+    files: [
+        'ionicons/css/ionicons.css'
+    ]
+});
+var concatenatedVendorCSS = concat(vendorTreeCSS, {
+    inputFiles: ['**/*.css'],
+    outputFile: '/vendor.css',
+    separator: '\n\n',
+    wrapInEval: false,
+    wrapInFunction: false
+});
 
 var html = pickFiles('app', {
     srcDir: '/',
@@ -65,12 +65,24 @@ var html = pickFiles('app', {
     files: ['index.html']
 });
 
+var fonts = pickFiles('bower_components', {
+    srcDir: '/ionicons/fonts',
+    destDir: '/fonts',
+    files: [
+        'ionicons.eot',
+        'ionicons.svg',
+        'ionicons.ttf',
+        'ionicons.woff'
+    ]
+});
+
 var styles = compileLess(['app/styles'], 'app.less', 'app.css', {});
 
 module.exports = mergeTrees([
     html,
     styles,
-    browserifyTree
+    browserifyTree,
     //concatenatedVendorJS,
-    //concatenatedVendorCSS
+    concatenatedVendorCSS,
+    fonts
 ]);
