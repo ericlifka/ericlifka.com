@@ -18,7 +18,14 @@
     border-top-color: @color;
   }
 }
+
 .tile-hover(@background-color, @color) {
+  &, &:before, &:after {
+    transition-property: background-color, color, border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
+  }
+
   &:hover, &.active:hover, &.secondary:hover {
     background-color: @background-color;
     color: @color;
@@ -30,6 +37,7 @@
     border-top-color: @background-color;
   }
 }
+
 .tile-active(@color) {
   &.active {
     background-color: @color;
