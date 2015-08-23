@@ -9,6 +9,8 @@
     "broccoli-static-compiler": "^0.2.1"
   },
   "scripts": {
-    "start": "broccoli serve"
+    "start": "broccoli serve",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && broccoli build dist"
   }
 }
