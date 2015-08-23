@@ -1,34 +1,94 @@
-.hex:before {
-    content: " ";
-    width: 0; height: 0;
-    border-bottom: 30px solid #6C6;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-    position: absolute;
-    top: -30px;
-}
+.tile-type(@normal, @hover, @active, @secondary) {
+    /* normal */
+    & {
+        background-color: @normal;
+        cursor: pointer;
+    }
+    &:before {
+        border-bottom-color: @normal;
+    }
+    &:after {
+        border-top-color: @normal;
+    }
 
-.hex {
-    margin-top: 30px;
-    width: 104px;
-    height: 60px;
-    background-color: #6C6;
-    position: relative;
-}
+    /* hover */
+    &:hover, &.active:hover, &.secondary:hover {
+        background-color: @hover;
+    }
+    &:hover:before, &.active:hover:before, &.secondary:hover:before {
+        border-bottom-color: @hover;
+    }
+    &:hover:after, &.active:hover:after, &.secondary:hover:after {
+        border-top-color: @hover;
+    }
 
-.hex:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    bottom: -30px;
-    border-top: 30px solid #6C6;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    /* selected */
+    &.active {
+        background-color: @active;
+    }
+    &.active:before {
+        border-bottom-color: @active;
+    }
+    &.active:after {
+        border-top-color: @active;
+    }
+
+    /* secondary selection */
+    &.secondary {
+        background-color: @secondary;
+    }
+    &.secondary:before {
+        border-bottom-color: @secondary;
+    }
+    &.secondary:after {
+        border-top-color: @secondary;
+    }
 }
 
 .row {
-    clear: left;
+    display: flex;
+
+    &:nth-child(odd) {
+        margin-left: 53px;
+    }
+
+    .hex {
+        position: relative;
+        display: inline-block;
+        margin-top: 33px;
+        min-width: 104px;
+        margin-left: 3px;
+        height: 60px;
+        background-color: transparent;
+
+        &:before {
+            position: absolute;
+            content: " ";
+            width: 0;
+            height: 0;
+            top: -30px;
+            border-bottom: 30px solid transparent;
+            border-left: 52px solid transparent;
+            border-right: 52px solid transparent;
+        }
+
+        &:after {
+            position: absolute;
+            content: " ";
+            width: 0;
+            height: 0;
+            bottom: -30px;
+            border-top: 30px solid transparent;
+            border-left: 52px solid transparent;
+            border-right: 52px solid transparent;
+        }
+
+        & {
+            .tile-type(green, green, green, green);
+        }
+    }
 }
+
 .row.even {
     margin-left: 53px;
 }
