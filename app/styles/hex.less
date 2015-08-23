@@ -1,8 +1,20 @@
 .row {
   display: flex;
 
-  &:nth-child(odd) {
-    margin-left: @hex-row-tile-offset;
+  &:nth-child(1) {
+    .hex-row-tile-offset(1);
+  }
+  &:nth-child(2) {
+    .hex-row-tile-offset(2);
+  }
+  &:nth-child(3) {
+    .hex-row-tile-offset(3);
+  }
+  &:nth-child(4) {
+    .hex-row-tile-offset(4);
+  }
+  &:nth-child(5) {
+    .hex-row-tile-offset(5);
   }
 }
 
