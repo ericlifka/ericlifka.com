@@ -1,39 +1,3 @@
-.tile-type(@normal, @hover, @active) {
-  /* normal */
-  & {
-    background-color: @normal;
-    cursor: pointer;
-  }
-  &:before {
-    border-bottom-color: @normal;
-  }
-  &:after {
-    border-top-color: @normal;
-  }
-
-  /* hover */
-  &:hover, &.active:hover, &.secondary:hover {
-    background-color: @hover;
-  }
-  &:hover:before, &.active:hover:before, &.secondary:hover:before {
-    border-bottom-color: @hover;
-  }
-  &:hover:after, &.active:hover:after, &.secondary:hover:after {
-    border-top-color: @hover;
-  }
-
-  /* selected */
-  &.active {
-    background-color: @active;
-  }
-  &.active:before {
-    border-bottom-color: @active;
-  }
-  &.active:after {
-    border-top-color: @active;
-  }
-}
-
 .row {
   display: flex;
 
