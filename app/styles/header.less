@@ -3,14 +3,14 @@
   align-items: center;
   font-family: @standard-font;
 
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-left: 50px;
+  padding-top: @app-padding;
+  padding-bottom: @app-padding;
+  margin-left: @app-padding + 5px;
   max-width: 1000px;
 
   .title-card {
     white-space: nowrap;
-    padding-right: 50px;
+    padding-right: @app-padding;
 
     .name {
       font-family: @serif-font;
@@ -25,10 +25,9 @@
   }
 
   .description {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px @app-padding;
     font-size: 22px;
     color: @black-stepdown-2;
-    border-left: 1px solid #BDBDBD;
+    border-left: 1px solid @black-stepdown-3;
   }
 }
