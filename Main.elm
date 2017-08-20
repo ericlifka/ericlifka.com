@@ -1,5 +1,9 @@
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
+import Css exposing (..)
+
+styles =
+  Css.asPairs >> Html.Attributes.style
 
 main =
   Html.beginnerProgram { model = model, update = update, view = view }
@@ -32,6 +36,6 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div [ class "main" ]
-    [ text "hello world"
+  div [ styles [ position absolute, left (px 5) ] ]
+    [ Html.text "hello world"
     ]
