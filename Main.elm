@@ -1,4 +1,5 @@
-import Html exposing (..)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 
 main =
   Html.beginnerProgram { model = model, update = update, view = view }
@@ -31,6 +32,6 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div []
+  div [ class "main" ]
     [ text "hello world"
     ]
